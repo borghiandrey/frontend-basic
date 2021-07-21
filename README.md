@@ -1,0 +1,1 @@
+This is a template for frontend development for personal uses!
