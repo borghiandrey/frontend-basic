@@ -1,0 +1,42 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3.2rem 1.2rem;
+
+  &__title {
+    align-self: center;
+
+    img {
+
+    }
+  }
+
+  &__links {
+    padding: 0 1rem;
+
+    a {
+      font-size: 0.94rem;
+      font-weight: 500;
+      padding: 0 1rem;
+      transition: 150ms color ease-in-out;
+
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+  }
+
+  &__button {
+
+  }
+}

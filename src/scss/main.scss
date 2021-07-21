@@ -1,1 +1,7 @@
-@use 'globals' as *;
+@import 'resets';
+@import 'variables';
+@import 'globals'; 
+@import 'helper';
+
+@import 'nav';
+

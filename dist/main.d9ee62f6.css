@@ -1,11 +1,113 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
 body {
-  background-color: greenyellow;
-  font-family: sans-serif;
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background-color: #ffffff;
+  font-size: 16px;
+  font-family: "Be Vietnam", sans-serif;
+  color: #1b274e;
 }
 
 h1 {
-  font-size: 4rem;
-  font-weight: 300;
+  font-size: 3rem;
+}
+
+.is-button {
+  background-color: #f3603c;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 1rem 1.2rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3.2rem 1.2rem;
+}
+.nav__title {
+  align-self: center;
+}
+.nav__links {
+  padding: 0 1rem;
+}
+.nav__links a {
+  font-size: 0.94rem;
+  font-weight: 500;
+  padding: 0 1rem;
+  transition: 150ms color ease-in-out;
+}
+.nav__links a:first-child {
+  padding-left: 0;
+}
+.nav__links a:last-child {
+  padding-right: 0;
+}
+.nav__links a:hover {
+  color: #f3603c;
 }
 
 /*# sourceMappingURL=/main.d9ee62f6.css.map */
