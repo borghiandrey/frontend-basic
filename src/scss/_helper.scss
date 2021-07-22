@@ -1,7 +1,44 @@
 .is-button {
-  background-color: $primaryColor;
+  display: inline-block;
+  text-align: center;
+
+  font-family: inherit;
+  font-weight: 500;
   color: white;
+  font-size: 0.95rem;
+
+  background-color: $primaryColor;
+  
   border: none;
   border-radius: 25px;
-  padding: 1rem 1.2rem;
+
+  height: 48px; // 3rem
+  line-height: 48px; // 3rem
+  min-width: 144px; // 9rem
+
+  transition: 150ms all ease-in-out;
+
+  &:hover {
+    box-shadow: 2px 2px 5px rgba($color: black, $alpha: 0.29);
+    opacity: 0.8;
+  }
+}
+
+.is-title {
+  font-weight: 700;
+  margin-bottom: 2.4rem;
+}
+
+.is-text-sub {
+  color: $lightFontColor;
+  margin-bottom: 2.4rem;
+  line-height: 1.7rem;
+  max-width: 342px; // 21.375rem
+}
+
+.is-text-main {
+  color: $lightFontColor;
+  margin-bottom: 2.4rem;
+  line-height: 1.7rem;
+  max-width: 446px; // 27.875rem
 }
