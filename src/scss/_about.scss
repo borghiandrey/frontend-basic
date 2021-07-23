@@ -1,55 +1,84 @@
 .about {
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: 3rem;
   padding: 0 1.2rem;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  display: block;
+  text-align: center;
+  
+  @include breakpointUp(lg) {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    
+  }
 
   &__intro {
     max-width: 452px; // 28.25rem
+    margin: 0 auto;
+
+    @include breakpointUp(lg) {
+      margin: 0;
+    }
+
+    p {
+      max-width: none;
+    }
 
   }
 
   &__content {
-    position: relative;
-    top: -1rem;
 
-    h3 {
-      margin-bottom: 1.6rem;
+    p {
+      margin-left: auto;
+      margin-right: auto;
+
+      @include breakpointUp(lg) {
+        text-align: left;
+      }
     }
+    
+    @include breakpointUp(lg) {
+      position: relative;
+      top: -1rem;
 
-    ol {
-      counter-reset: list-counter;
-
-      & li {
-        counter-increment: list-counter;
-
-        &::before {
-          display: inline-block;
-          position: relative;
-          text-align: center;
-          top: 1.5rem;
-          left: -4rem;
-          content: "0" counter(list-counter);
-          font-family: inherit;
-          font-weight: 500;
-          color: white;
-          font-size: 0.95rem;
-
-          background-color: $primaryColor;
-          
-          border: none;
-          border-radius: 25px;
-
-          height: 32px; // 3rem
-          line-height: 32px; // 3rem
-          width: 3rem;
+      ol {
+        counter-reset: list-counter;
+  
+        & li {
+          counter-increment: list-counter;
+  
+          &::before {
+            display: inline-block;
+            position: relative;
+            text-align: center;
+            top: 1.5rem;
+            left: -260px;
+            content: "0" counter(list-counter);
+            font-family: inherit;
+            font-weight: 500;
+            color: white;
+            font-size: 0.95rem;
+  
+            background-color: $primaryColor;
+            
+            border: none;
+            border-radius: 25px;
+  
+            height: 32px; // 3rem
+            line-height: 32px; // 3rem
+            width: 3rem;
+          }
         }
       }
     }
 
+    h3 {
+      margin-bottom: 1.6rem;
 
-
+      @include breakpointUp(lg) {
+        text-align: left;
+      }
+    }
   }
 }

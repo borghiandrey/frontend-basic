@@ -1,0 +1,53 @@
+.cta {
+  background-color: $primaryColor;
+  background-image: url(../images/bg-simplify-section-desktop.svg);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+
+  &__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+
+    display: block;
+
+    text-align: center;
+
+    @include breakpointUp(md) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 4rem 2rem;
+
+    }
+  }
+
+  &__content {
+    max-width: 455px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include breakpointUp(md) {
+      margin-left: 0;
+    }
+
+    h2 {
+      color: white;
+      margin-bottom: 2rem;
+      margin-left: auto;
+      line-height: 2.8rem;
+      text-align: center;
+      
+      @include breakpointUp(md) {
+        margin-bottom: 0;
+
+      }
+    }
+  }
+
+  &__button {
+    background-color: white;
+    color: $primaryColor;
+  }
+}

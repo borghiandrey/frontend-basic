@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "bsync": "browser-sync start --server --files dist/*.css",
     "dev": "parcel index.html",
     "build": "parcel build index.html"
   },

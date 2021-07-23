@@ -7,9 +7,42 @@ body {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
+  
+  @include breakpointUp(md) {
+    font-size: 3.5rem;
+  }
 }
 
 h2 {
   font-size: 2.5rem;
+}
+
+.bg1 {
+  position: absolute;
+  z-index: -99;
+  top: -270px;
+  left: 62%;
+}
+.bg2 {
+  position: absolute;
+  z-index: -99;
+  top: 1010px;
+  right: 71%;
+}
+
+.skip-link {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+  transform: translateY(-110%);
+  transition: 200ms transform ease-in-out;
+
+  &:focus {
+    transform: translateY(110%);
+  }
 }
