@@ -2,27 +2,54 @@
   background-color: $darkest;
   
   &__wrapper {
+    text-align: center;
+
+    @include breakpointUp(md) {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+    }
+
     min-height: 130px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 1rem;
-    display: flex;
-    justify-content: space-between;
 
     color: white;
 
 
     .col-1 {
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: space-between;
-
+      
+      @include breakpointUp(md) {
+        display: flex;
+        flex-flow: column-reverse nowrap;
+        justify-content: space-between;
+      }
+      
       .fLogo {
         width: 147px;
         height: 26px;
+
+        margin-bottom: 1.5rem;
+
+        @include breakpointUp (md) {
+          margin-bottom: 0;
+        }
+      }
+      
+      .copyright {
+        @include breakpointUp(md) {
+          display: none;
+        }
       }
 
       .social {
+
+        margin-bottom: 1.9rem;
+
+        @include breakpointUp(md) {
+          margin-bottom: 0;
+        }
 
         &__link {
           display: inline-block;
@@ -37,13 +64,15 @@
     }
     .col-2 {
 
+      margin-bottom: 1.5rem;
+
       a {
         display: block;
         margin-bottom: 1.5rem;
-        transition: 250ms filter ease-in-out;
+        transition: 250ms color ease-in-out;
 
         &:hover {
-          filter: invert(58%) sepia(98%) saturate(3374%) hue-rotate(336deg) brightness(97%) contrast(97%);
+          color: $primaryColor;
         }
 
         &:last-child {
@@ -57,10 +86,10 @@
       a {
         display: block;
         margin-bottom: 1.5rem;
-        transition: 250ms filter ease-in-out;
+        transition: 250ms color ease-in-out;
 
         &:hover {
-          filter: invert(58%) sepia(98%) saturate(3374%) hue-rotate(336deg) brightness(97%) contrast(97%);
+          color: $primaryColor;
         }
 
         &:last-child {
@@ -75,6 +104,15 @@
       justify-content: space-between;
       font-family: 'Be Vietnam', sans-serif;
       font-weight: 500;
+      margin-bottom: 2.5rem;
+
+      .copyright {
+        display: none;
+
+        @include breakpointUp(md) {
+          display: inline-block;
+        }
+      }
 
       form {
 
@@ -109,11 +147,28 @@
       }
       
       
-      p {
-        text-align: center;
-        color: rgb(128, 128, 128);
-        font-size: 0.8rem;
-      }
     }
+  }
+}
+
+
+.copyright p {
+  text-align: center;
+  color: rgb(128, 128, 128);
+  font-size: 0.8rem;
+}
+
+.link-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+
+  .col-2 {
+    text-align: left;
+    margin-right: 3.5rem;
+  }
+
+  .col-3 {
+    text-align: left;
   }
 }

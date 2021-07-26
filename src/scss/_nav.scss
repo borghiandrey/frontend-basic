@@ -19,14 +19,21 @@
 
     display: none;
 
-    @include breakpointUp(lg) {
+    @include breakpointUp(md) {
       display: block;
     }
 
     a {
-      font-size: 0.94rem;
-      font-weight: 500;
-      padding: 0 1rem;
+      font-size: 0.82rem;
+      font-weight: 400;
+      padding: 0 0.85rem;
+
+      @include breakpointUp (lg) {
+        font-size: 0.94rem;
+        font-weight: 500;
+        padding: 0 1rem;
+
+      }
       transition: 150ms color ease-in-out;
 
       &:first-child {
@@ -45,14 +52,14 @@
   &__button {
     display: none;
 
-    @include breakpointUp(lg) {
+    @include breakpointUp(md) {
       display: inline-block;
     }
 
   }
 
   .hamburger {
-    @include breakpointUp(lg) {
+    @include breakpointUp(md) {
       display: none;
     }
   }

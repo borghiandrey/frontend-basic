@@ -4,6 +4,21 @@ body {
   font-family: 'Be Vietnam', sans-serif;
   color: $mainFontColor;
   overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    position: absolute;
+    width: 8px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #ececec;
+  }
+}
+
+main {
+  overflow-x: hidden;
 }
 
 h1 {
@@ -19,16 +34,27 @@ h2 {
 }
 
 .bg1 {
-  position: absolute;
-  z-index: -99;
-  top: -270px;
-  left: 62%;
+  display: none;
+
+  @include breakpointUp(md) {
+    display: block;
+    position: absolute;
+    z-index: -99;
+    top: -270px;
+    left: 62%;
+  }
 }
 .bg2 {
-  position: absolute;
-  z-index: -99;
-  top: 1010px;
-  right: 71%;
+  display: none;
+
+  @include breakpointUp(md) {
+    display: block;
+    position: absolute;
+    z-index: -99;
+    top: 1010px;
+    right: 71%;
+  }
+
 }
 
 .skip-link {

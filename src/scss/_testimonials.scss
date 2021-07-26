@@ -9,57 +9,61 @@
   }
 
   &__cards {
-    display: flex;
-    margin-bottom: 4rem;
-    overflow-x: scroll;
-    position: relative;
-    top: -2rem;
+    display: none;
 
-    &::-webkit-scrollbar {
-      padding-top: 5px;
-      height: 8px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      background-color: #ececec;
-    }
-
-    .card {
-      min-width: 540px; // 33.75rem
-      overflow: visible;
-      margin-left: 2rem;
-      
-      &:first-child {
-        margin-left: 0;
+    @include breakpointUp(lg) {
+      display: flex;
+      margin-bottom: 4rem;
+      overflow-x: scroll;
+      position: relative;
+      top: -2rem;
+  
+      &::-webkit-scrollbar {
+        padding-top: 5px;
+        height: 8px;
       }
-      
-      
-      h3 {
-        margin-bottom: 2rem;
+  
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #ececec;
       }
-      
-      p {
-        margin: 0 auto;
-      }
-      
-      &__image {
+  
+      .card {
+        min-width: 540px; // 33.75rem
+        overflow: visible;
+        margin-left: 2rem;
         
-        img {
-          position: relative;
-          top: 65px;
-          width: 104px;
-          margin-bottom: 1rem;
-          
+        &:first-child {
+          margin-left: 0;
         }
-      }
-      
-      &__content {
-        background-color: #f7f7f7;
-        padding-top: 5rem;
-        padding-bottom: 2.4rem;
-        margin-bottom: 8px;
-        border-radius: 12px;
+        
+        
+        h3 {
+          margin-bottom: 2rem;
+        }
+        
+        p {
+          margin: 0 auto;
+        }
+        
+        &__image {
+          
+          img {
+            position: relative;
+            top: 65px;
+            width: 104px;
+            margin-bottom: 1rem;
+            
+          }
+        }
+        
+        &__content {
+          background-color: #f7f7f7;
+          padding-top: 5rem;
+          padding-bottom: 2.4rem;
+          margin-bottom: 8px;
+          border-radius: 12px;
+        }
       }
     }
   }

@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "bsync": "browser-sync start --server --files dist/*.css",
     "dev": "parcel index.html",
     "build": "parcel build index.html"
   },
@@ -12,7 +11,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.27.4",
     "parcel-bundler": "^1.12.5",
     "sass": "^1.35.2"
-  }
+  },
+  "dependencies": {}
 }

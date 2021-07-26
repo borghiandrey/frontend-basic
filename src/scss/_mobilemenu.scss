@@ -1,0 +1,46 @@
+.overlay {
+  pointer-events: none;
+
+  &.open {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.11), rgba(0, 0, 0, 0.7));
+
+  }
+}
+
+.mobile-menu {
+  display: none;
+
+  &.open {
+    display: block;
+    position: absolute;
+    top: 7.52rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 2.5rem 0;
+    width: 90%;
+    border-radius: 5px;
+  
+    a {
+      text-align: center;
+      display: block;
+      margin-bottom: 1.8rem;
+      font-weight: 600;
+  
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+#body {
+  &.noscroll {
+    overflow-y: hidden;
+  }
+}
