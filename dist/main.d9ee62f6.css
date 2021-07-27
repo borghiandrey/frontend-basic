@@ -69,8 +69,7 @@ body {
   overflow-x: hidden;
 }
 body::-webkit-scrollbar {
-  position: absolute;
-  width: 8px;
+  width: 0;
   background-color: transparent;
 }
 body::-webkit-scrollbar-thumb {
@@ -175,10 +174,52 @@ h2 {
   max-width: 446px;
 }
 
-.overlay {
-  pointer-events: none;
+.has-fade {
+  visibility: hidden;
 }
-.overlay.open {
+
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fade-in 350ms ease-in-out forwards;
+}
+
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+    display: block;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+  }
+}
+.fade-out {
+  animation: fade-out 350ms ease-in-out forwards;
+}
+
+.overlay {
+  display: block;
+  pointer-events: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -188,11 +229,8 @@ h2 {
 }
 
 .mobile-menu {
-  display: none;
-}
-.mobile-menu.open {
-  display: block;
   position: absolute;
+  display: block;
   top: 7.52rem;
   left: 50%;
   transform: translateX(-50%);
@@ -201,13 +239,13 @@ h2 {
   width: 90%;
   border-radius: 5px;
 }
-.mobile-menu.open a {
+.mobile-menu a {
   text-align: center;
   display: block;
   margin-bottom: 1.8rem;
   font-weight: 600;
 }
-.mobile-menu.open a:last-child {
+.mobile-menu a:last-child {
   margin-bottom: 0;
 }
 
@@ -302,8 +340,15 @@ h2 {
   margin-right: auto;
 }
 @media (min-width: 868px) {
+  .hero__content p {
+    margin: 0;
+    margin-bottom: 1.5rem;
+  }
+}
+@media (min-width: 868px) {
   .hero__content {
     width: 50%;
+    text-align: left;
   }
 }
 

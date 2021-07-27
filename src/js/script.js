@@ -19,22 +19,37 @@
 /* Hamburger button */
 
 const btnHamburger = document.querySelector('#btnHamburger');
+const btnImage = document.getElementById('btnImage');
 const overlay = document.querySelector('.overlay');
 const mobileMenu = document.querySelector('.mobile-menu');
 const body = document.querySelector('#body');
+const fadeElems = document.querySelectorAll('.has-fade');
 
 btnHamburger.addEventListener('click', function(){
   console.log('hamburger button clicked!');
 
   if (btnHamburger.classList.contains('open')) {
+    btnImage.src="icon-hamburger.16ac0978.svg";
+
+    body.classList.remove('noscroll');
     btnHamburger.classList.remove('open');
     overlay.classList.remove('open');
     mobileMenu.classList.remove('open');
-    body.classList.remove('noscroll');
+    fadeElems.forEach(function(element){
+      element.classList.remove('fade-in');
+      element.classList.add('fade-out');
+    })
+    
   } else {
+    btnImage.src="icon-close.0093b7d5.svg";
+    
     btnHamburger.classList.add('open');
     overlay.classList.add('open');
     mobileMenu.classList.add('open');
     body.classList.add('noscroll');
+    fadeElems.forEach(function(element){
+      element.classList.remove('fade-out');
+      element.classList.add('fade-in');
+    })
   }
 })

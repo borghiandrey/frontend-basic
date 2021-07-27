@@ -141,22 +141,34 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
 
 var btnHamburger = document.querySelector('#btnHamburger');
+var btnImage = document.getElementById('btnImage');
 var overlay = document.querySelector('.overlay');
 var mobileMenu = document.querySelector('.mobile-menu');
 var body = document.querySelector('#body');
+var fadeElems = document.querySelectorAll('.has-fade');
 btnHamburger.addEventListener('click', function () {
   console.log('hamburger button clicked!');
 
   if (btnHamburger.classList.contains('open')) {
+    btnImage.src = "icon-hamburger.16ac0978.svg";
+    body.classList.remove('noscroll');
     btnHamburger.classList.remove('open');
     overlay.classList.remove('open');
     mobileMenu.classList.remove('open');
-    body.classList.remove('noscroll');
+    fadeElems.forEach(function (element) {
+      element.classList.remove('fade-in');
+      element.classList.add('fade-out');
+    });
   } else {
+    btnImage.src = "icon-close.0093b7d5.svg";
     btnHamburger.classList.add('open');
     overlay.classList.add('open');
     mobileMenu.classList.add('open');
     body.classList.add('noscroll');
+    fadeElems.forEach(function (element) {
+      element.classList.remove('fade-out');
+      element.classList.add('fade-in');
+    });
   }
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -187,7 +199,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60912" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51371" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

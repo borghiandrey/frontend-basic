@@ -8,10 +8,6 @@
 
   &__title {
     align-self: center;
-
-    img {
-
-    }
   }
 
   &__links {
@@ -59,6 +55,7 @@
   }
 
   .hamburger {
+
     @include breakpointUp(md) {
       display: none;
     }

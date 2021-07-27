@@ -31,10 +31,16 @@
     p {
       margin-left: auto;
       margin-right: auto;
+
+      @include breakpointUp(md) {
+        margin: 0;
+        margin-bottom: 1.5rem;
+      }
     }
 
     @include breakpointUp(md) {
       width: 50%;
+      text-align: left;
     }
   }
 }
