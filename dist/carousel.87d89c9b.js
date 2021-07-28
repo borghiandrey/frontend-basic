@@ -117,79 +117,88 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"src/js/carousel.js":[function(require,module,exports) {
+var carouselItem1 = document.querySelector('#carouselItem1');
+var carouselItem2 = document.querySelector('#carouselItem2');
+var carouselItem3 = document.querySelector('#carouselItem3');
+var carouselItem4 = document.querySelector('#carouselItem4');
+var indicator1 = document.querySelector('#indicator1');
+var indicator2 = document.querySelector('#indicator2');
+var indicator3 = document.querySelector('#indicator3');
+var indicator4 = document.querySelector('#indicator4');
+var btnLeft1 = document.querySelector('#btnLeft1');
+var btnRight1 = document.querySelector('#btnRight1');
+var btnLeft2 = document.querySelector('#btnLeft2');
+var btnRight2 = document.querySelector('#btnRight2');
+var btnLeft3 = document.querySelector('#btnLeft3');
+var btnRight3 = document.querySelector('#btnRight3');
+var btnLeft4 = document.querySelector('#btnLeft4');
+var btnRight4 = document.querySelector('#btnRight4');
+/* ======================== ITEM 1 ======================= */
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
+btnLeft1.addEventListener('click', function () {
+  console.log('left button clicked');
+  carouselItem1.classList.remove('active');
+  carouselItem4.classList.add('active');
+  indicator1.classList.remove('iActive');
+  indicator4.classList.add('iActive');
+});
+btnRight1.addEventListener('click', function () {
+  console.log('right button clicked');
+  carouselItem1.classList.remove('active');
+  carouselItem2.classList.add('active');
+  indicator1.classList.remove('iActive');
+  indicator2.classList.add('iActive');
+});
+/* ======================== ITEM 2 ======================= */
 
-  return bundleURL;
-}
+btnLeft2.addEventListener('click', function () {
+  console.log('left button clicked');
+  carouselItem2.classList.remove('active');
+  carouselItem1.classList.add('active');
+  indicator2.classList.remove('iActive');
+  indicator1.classList.add('iActive');
+});
+btnRight2.addEventListener('click', function () {
+  console.log('right button clicked');
+  carouselItem2.classList.remove('active');
+  carouselItem3.classList.add('active');
+  indicator2.classList.remove('iActive');
+  indicator3.classList.add('iActive');
+});
+/* ======================== ITEM 3 ======================= */
 
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+btnLeft3.addEventListener('click', function () {
+  console.log('left button clicked');
+  carouselItem3.classList.remove('active');
+  carouselItem2.classList.add('active');
+  indicator3.classList.remove('iActive');
+  indicator2.classList.add('iActive');
+});
+btnRight3.addEventListener('click', function () {
+  console.log('right button clicked');
+  carouselItem3.classList.remove('active');
+  carouselItem4.classList.add('active');
+  indicator3.classList.remove('iActive');
+  indicator4.classList.add('iActive');
+});
+/* ======================== ITEM 4 ======================= */
 
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/scss/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./..\\images\\bg-simplify-section-desktop.svg":[["bg-simplify-section-desktop.8373102e.svg","src/images/bg-simplify-section-desktop.svg"],"src/images/bg-simplify-section-desktop.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+btnLeft4.addEventListener('click', function () {
+  console.log('left button clicked');
+  carouselItem4.classList.remove('active');
+  carouselItem3.classList.add('active');
+  indicator4.classList.remove('iActive');
+  indicator3.classList.add('iActive');
+});
+btnRight4.addEventListener('click', function () {
+  console.log('right button clicked');
+  carouselItem4.classList.remove('active');
+  carouselItem1.classList.add('active');
+  indicator4.classList.remove('iActive');
+  indicator1.classList.add('iActive');
+});
+},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -393,5 +402,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/main.d9ee62f6.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/js/carousel.js"], null)
+//# sourceMappingURL=/carousel.87d89c9b.js.map

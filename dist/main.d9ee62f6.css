@@ -434,6 +434,7 @@ h2 {
 }
 .testimonials__title {
   margin-bottom: 4rem;
+  padding: 0 1rem;
 }
 .testimonials__cards {
   display: none;
@@ -481,6 +482,137 @@ h2 {
     margin-bottom: 8px;
     border-radius: 12px;
   }
+}
+
+.carousel {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  text-align: center;
+  max-width: 580px;
+  border-radius: 12px;
+  background-color: #f8f8f8;
+}
+@media (min-width: 1024px) {
+  .carousel {
+    display: none;
+  }
+}
+
+.carousel-item {
+  display: none;
+  text-align: center;
+  padding: 1.4rem 0 2.4rem 0;
+}
+.carousel-item.active {
+  display: table;
+}
+
+.photo {
+  margin-bottom: 1.65rem;
+}
+.photo img {
+  width: 6rem;
+  height: auto;
+}
+
+.name h1 {
+  font-size: 1.54rem;
+  font-weight: 700;
+  margin-bottom: 1.65rem;
+}
+
+.content p {
+  font-size: 0.89rem;
+  color: #b1b1b1;
+  letter-spacing: 1.8px;
+  line-height: 1.5rem;
+}
+
+.indicator div {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #f3603c;
+  border-radius: 50%;
+  content: "";
+  margin-bottom: 1.3rem;
+  transition: 200ms background-color ease-in-out;
+}
+.indicator div.iActive {
+  background-color: #f3603c;
+}
+
+.carousel-btn-left {
+  display: table-cell;
+  cursor: pointer;
+  opacity: 0;
+  width: 65px;
+  position: relative;
+  background-color: #c4c4c4;
+  transition: 200ms opacity ease-in-out;
+}
+.carousel-btn-left:hover {
+  opacity: 0.35;
+}
+
+.carousel-btn-right {
+  display: table-cell;
+  cursor: pointer;
+  opacity: 0;
+  width: 65px;
+  position: relative;
+  background-color: #c4c4c4;
+  transition: 200ms opacity ease-in-out;
+}
+.carousel-btn-right:hover {
+  opacity: 0.35;
+}
+
+.btn-icon-left {
+  display: block;
+  position: absolute;
+  height: 100%;
+}
+.btn-icon-left div {
+  position: relative;
+  height: 6px;
+  width: 40px;
+  border-radius: 15px;
+  background-color: #868686;
+}
+.btn-icon-left div:first-child {
+  top: 43%;
+  left: 9px;
+  transform: rotate(-45deg);
+}
+.btn-icon-left div:last-child {
+  top: 49%;
+  left: 9px;
+  transform: rotate(45deg);
+}
+
+.btn-icon-right {
+  display: block;
+  position: absolute;
+  height: 100%;
+}
+.btn-icon-right div {
+  position: relative;
+  height: 6px;
+  width: 40px;
+  border-radius: 15px;
+  background-color: #868686;
+}
+.btn-icon-right div:first-child {
+  top: 43%;
+  left: 13px;
+  transform: rotate(45deg);
+}
+.btn-icon-right div:last-child {
+  top: 49%;
+  left: 13px;
+  transform: rotate(-45deg);
 }
 
 .cta {
